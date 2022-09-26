@@ -15,19 +15,19 @@ This document has instructions on the following:
   
    2. Click **Catalog**.
    
-   ![Catalog](https://github.ibm.com/kccox/eventstreams-samples/blob/main/java-apache/images/catalog.png)
+   ![Catalog](https://github.com/IBM/eventstreams-samples/blob/main/java-apache/images/catalog.png)
    
     3. From the navigation pane, click **Integration**, click the **Event Streams** tile. The Event Streams service instance page opens.
     
-  ![Integration](https://github.ibm.com/kccox/eventstreams-samples/blob/main/java-apache/images/Integration.png)
+  ![Integration](https://github.com/IBM/eventstreams-samples/blob/main/java-apache/images/Integration.png)
   
    4. For **Platform** choose Public Cloud and for **Location**, you can use the default, Dallas. For the plan, select the **Lite Plan**
    
-   ![Platform](https://github.ibm.com/kccox/eventstreams-samples/blob/main/java-apache/images/Location.png)
+   ![Platform](https://github.com/IBM/eventstreams-samples/blob/main/java-apache/images/Location.png)
    
    5. Enter a name for your service. You can use the default value.
    
-  ![Name](https://github.ibm.com/kccox/eventstreams-samples/blob/main/java-apache/images/ESName.png)
+  ![Name](https://github.com/IBM/eventstreams-samples/blob/main/java-apache/images/ESname.png)
   
    6. Click **Create**. The Event Streams **Getting started** page opens. 
   
@@ -44,18 +44,19 @@ This document has instructions on the following:
    1. From the dashboard, navigate to the left side panel and look for **Resource List** and click on it
    
 
-      ![IBM Cloud Dashboard](https://github.ibm.com/kccox/eventstreams-samples/blob/main/java-apache/images/dashboard.png)
+      ![IBM Cloud Dashboard](https://github.com/IBM/eventstreams-samples/blob/main/java-apache/images/dashboard.png)
+      
 
    2. Look for Services and Software in the list of resources. Under this tab, look for the Event Streams instance that you created in the previous step
    
 	
-      ![ResourceList](https://github.ibm.com/kccox/eventstreams-samples/blob/main/java-apache/images/ResourceList.png)
+      ![ResourceList](https://github.com/IBM/eventstreams-samples/blob/main/java-apache/images/ResourceList.png)
         
 
    3. Once you click on your instance, you will be redirected to the Event Streams dashboard. Here you will be able to create topics, service credentials, etc. 
    
 
-        ![ESDashboard](https://github.ibm.com/kccox/eventstreams-samples/blob/main/java-apache/images/ESDashboard.png)
+        ![ESDashboard](https://github.com/IBM/eventstreams-samples/blob/main/java-apache/images/ESDashboard.png)
 
 ### 1. **Create a topic**
 
@@ -75,7 +76,7 @@ This document has instructions on the following:
 
    5. The topic appears in the table in a few minutes. Congratulations, you have created a topic!
    
-    	![Topics](https://github.ibm.com/kccox/eventstreams-samples/blob/main/java-apache/images/topics.png)
+    	![Topics](https://github.com/IBM/eventstreams-samples/blob/main/java-apache/images/topics.png)
     
 ---
 
@@ -95,7 +96,7 @@ This document has instructions on the following:
   
    6. Click **View credentials** to see the `api_key` and `kafka_brokers_sasl` values.
    
-    	![Credentials](https://github.ibm.com/kccox/eventstreams-samples/blob/main/java-apache/images/credentials.png)
+    	![Credentials](https://github.com/IBM/eventstreams-samples/blob/main/java-apache/images/credentials.png)
     
 ---
 
