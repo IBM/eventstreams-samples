@@ -15,7 +15,7 @@ This document has instructions on the following:
   
    2. Click **Catalog**.
    
-   ![Catalog](https://github.ibm.com/kccox/eventstreams-samples/blob/main/java-apache/images/catalog.png)
+   ![Catalog](https://github.com/IBM/eventstreams-samples/blob/main/java-apache/images/catalog.png)
    
     3. From the navigation pane, click **Integration**, click the **Event Streams** tile. The Event Streams service instance page opens.
     
@@ -55,7 +55,7 @@ This document has instructions on the following:
    3. Once you click on your instance, you will be redirected to the Event Streams dashboard. Here you will be able to create topics, service credentials, etc. 
    
 
-        ![ESDashboard](https://github.ibm.com/kccox/eventstreams-samples/blob/main/java-apache/images/ESDashboard.png)
+        ![ESDashboard](https://github.com/IBM/eventstreams-samples/blob/main/java-apache/images/ESDashboard.png)
 
 ### 1. **Create a topic**
 
