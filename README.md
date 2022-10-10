@@ -22,6 +22,8 @@ please create an issue using the "New issue" button.
 New releases will be published at intervals.
 Please check the [changelog](./CHANGELOG.md) for content of releases.
 
+These samples are the newer version using Java. There are older samples using other languages and clients available [here](https://github.com/ibm-messaging/event-streams-samples). Please note that these samples are not monitored and will be deprecated soon. 
+
 ## Aim of the Samples
 
 These samples are designed to help you get started with Event Streams for IBM
