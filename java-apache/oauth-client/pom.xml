@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <licenses>
+        <license>
+            <name>IBM Cloud Service Agreement</name>
+            <url> https://www-03.ibm.com/software/sla/sladb.nsf/sla/bm-7171-10 </url>
+            <distribution>repo</distribution>
+            <comments>
+                Addendum for Cloud Services https://www.ibm.com/support/customer/csol/terms/api/download/7725d9a87e6c49e128787f24c6f7020a
+            </comments>
+        </license>
+    </licenses>
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.ibm.eventstreams</groupId>
@@ -12,6 +22,20 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
+
+    <name>oauth-client</name>
+    <url>https://cloud.ibm.com/catalog/event-streams</url>
+    <description>
+        IBM Event Streams OAuth client. This artifact is provided by the IBM Event Streams Development organisation.
+    </description>
+    <scm>
+        <url>https://github.com/IBM/eventstreams-samples</url>
+    </scm>
+    <developers>
+        <developer>
+            <name>IBM Event Streams</name>
+        </developer>
+    </developers>
 
     <dependencies>
         <dependency>
