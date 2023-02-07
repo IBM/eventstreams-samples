@@ -22,39 +22,56 @@ import org.apache.kafka.common.config.SaslConfigs;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
 /**
- * ConsumerConfiguration creates the configuration for the Apache Kafka consumer client.
- * See https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-consuming_messages for
+ * ConsumerConfiguration creates the configuration for the Apache Kafka consumer
+ * client.
+ * See
+ * https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-consuming_messages
+ * for
  * more information on configuring consumers for use with Event Streams.
  */
 public class ConsumerConfiguration {
 
-	public static Properties makeConfiguration(ConsumerCLI args) {
-		// The configuration for the apache client is a Properties, with keys defined in the apache client libraries.
-		final Properties configs = new Properties();
+    public static Properties makeConfiguration(ConsumerCLI args) {
+        // The configuration for the apache client is a Properties, with keys defined in
+        // the apache client libraries.
+        final Properties configs = new Properties();
 
-		// To access the kafka servers, we need to authenticate using SASL_SSL and the apikey,
-		// and provide the bootstrap server list
+        // To access the kafka servers, we need to authenticate using SASL_SSL and the
+        // apikey, and provide the bootstrap server list
+
+        // SASL_MECHANISM=PLAIN via API key is deprecated, use OAUTHBEARER instead
+        // configs.put(CommonClientConfigs.SECURITY_PROTOCOL_CONFIG, "SASL_SSL");
+        // configs.put(SaslConfigs.SASL_MECHANISM, "PLAIN");
+        // configs.put(SaslConfigs.SASL_JAAS_CONFIG, String.format(
+        // "org.apache.kafka.common.security.plain.PlainLoginModule required
+        // username=\"token\" password=\"%s\";", args.apikey));
         configs.put(CommonClientConfigs.SECURITY_PROTOCOL_CONFIG, "SASL_SSL");
-        configs.put(SaslConfigs.SASL_MECHANISM, "PLAIN");
+        configs.put(SaslConfigs.SASL_MECHANISM, "OAUTHBEARER");
         configs.put(SaslConfigs.SASL_JAAS_CONFIG, String.format(
-                "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"token\" password=\"%s\";",
+                "org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginModule required grant_type=\"urn:ibm:params:oauth:grant-type:apikey\" apikey=\"%s\";",
                 args.apikey));
+        configs.put(SaslConfigs.SASL_LOGIN_CALLBACK_HANDLER_CLASS,
+                "com.ibm.eventstreams.oauth.client.IAMOAuthBearerLoginCallbackHandler");
+        configs.put(SaslConfigs.SASL_OAUTHBEARER_TOKEN_ENDPOINT_URL, "https://iam.cloud.ibm.com/identity/token");
+        configs.put(SaslConfigs.SASL_OAUTHBEARER_JWKS_ENDPOINT_URL, "https://iam.cloud.ibm.com/identity/keys");
         configs.put(CommonClientConfigs.BOOTSTRAP_SERVERS_CONFIG, args.bootstrapServers);
 
         // Set up the recommended Event Streams kafka consumer configuration
-        // The client ID identifies your client application, and appears in the kafka server logs.
+        // The client ID identifies your client application, and appears in the kafka
+        // server logs.
         configs.put(CommonClientConfigs.CLIENT_ID_CONFIG, "eventstreams-java-sample-consumer1");
-        
-        // Each consumer is a member of a consumer group, identified by a string (command-line argument
+
+        // Each consumer is a member of a consumer group, identified by a string
+        // (command-line argument
         // in this sample).
-	    configs.put(ConsumerConfig.GROUP_ID_CONFIG, args.consumerGroup);
-	    
+        configs.put(ConsumerConfig.GROUP_ID_CONFIG, args.consumerGroup);
+
         // Part of the consumer's configuration is the classes to use for deserializing
         // data from the records (message) that are received by this consumer.
         // In this sample, we'll assume that the records contain strings.
         configs.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
         configs.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
-	        
-	    return configs;
-	}
+
+        return configs;
+    }
 }
