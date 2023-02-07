@@ -47,7 +47,7 @@ public class TopicsConfiguration {
 		configs.put(CommonClientConfigs.SECURITY_PROTOCOL_CONFIG, "SASL_SSL");
 		configs.put(SaslConfigs.SASL_MECHANISM, "OAUTHBEARER");
 		configs.put(SaslConfigs.SASL_JAAS_CONFIG, String.format(
-				"org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginModule required grant_type=\"urn:ibm:params:oauth:grant-type:apikey\" apikey=%s\";",
+				"org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginModule required grant_type=\"urn:ibm:params:oauth:grant-type:apikey\" apikey=\"%s\";",
 				args.apikey));
 		configs.put(SaslConfigs.SASL_LOGIN_CALLBACK_HANDLER_CLASS,
 				"com.ibm.eventstreams.oauth.client.IAMOAuthBearerLoginCallbackHandler");
