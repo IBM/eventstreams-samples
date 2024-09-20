@@ -50,7 +50,7 @@ public class ConsumerConfiguration {
                 "org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginModule required grant_type=\"urn:ibm:params:oauth:grant-type:apikey\" apikey=\"%s\";",
                 args.apikey));
         configs.put(SaslConfigs.SASL_LOGIN_CALLBACK_HANDLER_CLASS,
-                "com.ibm.eventstreams.oauth.client.IAMOAuthBearerLoginCallbackHandler");
+                "com.ibm.cloud.eventstreams.oauth.client.IAMOAuthBearerLoginCallbackHandler");
         configs.put(SaslConfigs.SASL_OAUTHBEARER_TOKEN_ENDPOINT_URL, "https://iam.cloud.ibm.com/identity/token");
         configs.put(SaslConfigs.SASL_OAUTHBEARER_JWKS_ENDPOINT_URL, "https://iam.cloud.ibm.com/identity/keys");
         configs.put(CommonClientConfigs.BOOTSTRAP_SERVERS_CONFIG, args.bootstrapServers);
